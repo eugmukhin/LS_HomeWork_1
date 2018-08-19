@@ -87,7 +87,6 @@ class Engine {
   }
   _rmfolders (callback) {
     if (this.errors.length > 0) {
-      console.log('Directory cannot be deleted. Please fix the error and try again.');
       callback(this.errors);
     } else {
       let stacklength = [];
@@ -105,7 +104,7 @@ class Engine {
     if (this.unlink) {
       this._rmfolders(callback);
     } else {
-      callback();
+      callback(this.errors);
     }
   }
   proc (callback) {
