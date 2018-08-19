@@ -76,7 +76,7 @@ class Engine {
           if (stats.isDirectory()) {
             this._readdir(filepath, callback);
           } else {
-            this.putfile(filepath, path.join('./dest', file[0], file));
+            this.putfile(filepath, path.join('./dest', file[0].toUpperCase(), file));
           }
         });
       }
